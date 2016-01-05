@@ -1,0 +1,17 @@
+<script type="text/javascript" src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+<script>
+//测试长连接用的客户端
+function callNode() {
+    $.ajax({
+        cache : false,
+        url : 'http://xxxxxxhost:8124',
+        data : {},
+        success : function(response, code, xhr) {
+            console.log(response);
+            console.log(code);
+            callNode();
+        }
+    });
+};
+callNode();
+</script>
