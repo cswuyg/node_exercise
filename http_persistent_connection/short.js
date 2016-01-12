@@ -1,5 +1,5 @@
 /**                                                                                                                                                                                                               
- *  * @file 短链接测试服务
+ *  * @file 短连接测试服务
  *  *  启动： node short.js
  *  * @authoer cswuyg
  *   */
