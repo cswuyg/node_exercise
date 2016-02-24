@@ -1,5 +1,5 @@
-`±àÒë£º  
-node-gyp configure  
-node-gyp build  
-°²×°£º  
-ÔÚÍâ²ãÄ¿Â¼Ö´ĞĞ£ºnpm install ./hello ½«helloÄ£¿é°²×°µ½node_modulesÄ¿Â¼ÏÂ`
+ç¼–è¯‘ï¼š   
+node-gyp configure    
+node-gyp build    
+å®‰è£…ï¼š    
+åœ¨å¤–å±‚ç›®å½•æ‰§è¡Œï¼šnpm install ./hello å°†helloæ¨¡å—å®‰è£…åˆ°node_modulesç›®å½•ä¸‹
