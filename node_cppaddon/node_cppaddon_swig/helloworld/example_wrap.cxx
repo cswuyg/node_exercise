@@ -1478,9 +1478,10 @@ SWIGRUNTIME void JS_veto_set_variable(v8::Local<v8::String> property, v8::Local<
 
 /* -------- TYPES TABLE (BEGIN) -------- */
 
-#define SWIGTYPE_p_char swig_types[0]
-static swig_type_info *swig_types[2];
-static swig_module_info swig_module = {swig_types, 1, 0, 0, 0, 0};
+#define SWIGTYPE_p_a__A swig_types[0]
+#define SWIGTYPE_p_char swig_types[1]
+static swig_type_info *swig_types[3];
+static swig_module_info swig_module = {swig_types, 2, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -1524,6 +1525,106 @@ v8::Handle<v8::Value> SWIG_From_int  (int value)
 #define SWIGV8_INIT example_initialize
 
 
+SWIGV8_ClientData _exports_A_clientData;
+
+
+static SwigV8ReturnValue _wrap_A_add(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Value> jsresult;
+  a::A *arg1 = (a::A *) 0 ;
+  int arg2 ;
+  int arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  int result;
+  
+  if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_A_add.");
+  
+  res1 = SWIG_ConvertPtr(args.Holder(), &argp1,SWIGTYPE_p_a__A, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "A_add" "', argument " "1"" of type '" "a::A *""'"); 
+  }
+  arg1 = (a::A *)(argp1);
+  ecode2 = SWIG_AsVal_int(args[0], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "A_add" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = (int)(val2);
+  ecode3 = SWIG_AsVal_int(args[1], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "A_add" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = (int)(val3);
+  result = (int)(arg1)->add(arg2,arg3);
+  jsresult = SWIG_From_int((int)(result));
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_new_A(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  v8::Handle<v8::Object> self = args.Holder();
+  a::A *result;
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_A.");
+  result = (a::A *)new a::A();
+  
+  
+  
+  SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_a__A, SWIG_POINTER_OWN);
+  SWIGV8_RETURN(self);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+#if (SWIG_V8_VERSION < 0x031710)
+static void _wrap_delete_A(v8::Persistent<v8::Value> object, void *parameter) {
+  SWIGV8_Proxy *proxy = static_cast<SWIGV8_Proxy *>(parameter);
+#elif (SWIG_V8_VERSION < 0x031900)
+  static void _wrap_delete_A(v8::Isolate *isolate, v8::Persistent<v8::Value> object, void *parameter) {
+    SWIGV8_Proxy *proxy = static_cast<SWIGV8_Proxy *>(parameter);
+#elif (SWIG_V8_VERSION < SWIGV8_SETWEAK_VERSION)
+    static void _wrap_delete_A(v8::Isolate *isolate, v8::Persistent< v8::Object> *object, SWIGV8_Proxy *proxy) {
+#else
+      static void _wrap_delete_A(const v8::WeakCallbackData<v8::Object, SWIGV8_Proxy> &data) {
+        v8::Local<v8::Object> object = data.GetValue();
+        SWIGV8_Proxy *proxy = data.GetParameter();
+#endif
+        
+        if(proxy->swigCMemOwn && proxy->swigCObject) {
+          a::A * arg1 = (a::A *)proxy->swigCObject;
+          delete arg1;
+        }
+        delete proxy;
+        
+#if (SWIG_V8_VERSION < 0x031710)
+        object.Dispose();
+#elif (SWIG_V8_VERSION < 0x031900)
+        object.Dispose(isolate);
+#elif (SWIG_V8_VERSION < 0x032100)
+        object->Dispose(isolate);
+#elif (SWIG_V8_VERSION < SWIGV8_SETWEAK_VERSION)
+        object->Dispose();
+#else
+        object.Clear();
+#endif
+      }
 
 
 static SwigV8ReturnValue _wrap_add(const SwigV8Arguments &args) {
@@ -1550,7 +1651,7 @@ static SwigV8ReturnValue _wrap_add(const SwigV8Arguments &args) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "add" "', argument " "2"" of type '" "int""'");
   } 
   arg2 = (int)(val2);
-  result = (int)add(arg1,arg2);
+  result = (int)a::add(arg1,arg2);
   jsresult = SWIG_From_int((int)(result));
   
   
@@ -1565,15 +1666,19 @@ fail:
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
+static swig_type_info _swigt__p_a__A = {"_p_a__A", "p_a__A|a::A *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
+  &_swigt__p_a__A,
   &_swigt__p_char,
 };
 
+static swig_cast_info _swigc__p_a__A[] = {  {&_swigt__p_a__A, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
+  _swigc__p_a__A,
   _swigc__p_char,
 };
 
@@ -1878,23 +1983,38 @@ void SWIGV8_INIT (v8::Handle<v8::Object> exports, v8::Handle<v8::Object> /*modul
   
 
   /* create class templates */
-  
+  /* Name: _exports_A, Type: p_a__A, Dtor: _wrap_delete_A */
+v8::Handle<v8::FunctionTemplate> _exports_A_class = SWIGV8_CreateClassTemplate("_exports_A");
+SWIGV8_SET_CLASS_TEMPL(_exports_A_clientData.class_templ, _exports_A_class);
+_exports_A_clientData.dtor = _wrap_delete_A;
+if (SWIGTYPE_p_a__A->clientdata == 0) {
+  SWIGTYPE_p_a__A->clientdata = &_exports_A_clientData;
+}
+
 
   /* register wrapper functions */
-  
+  SWIGV8_AddMemberFunction(_exports_A_class, "add", _wrap_A_add);
+
 
   /* setup inheritances */
   
 
   /* class instances */
-  
+  /* Class: A (_exports_A) */
+v8::Handle<v8::FunctionTemplate> _exports_A_class_0 = SWIGV8_CreateClassTemplate("A");
+_exports_A_class_0->SetCallHandler(_wrap_new_A);
+_exports_A_class_0->Inherit(_exports_A_class);
+_exports_A_class_0->SetHiddenPrototype(true);
+v8::Handle<v8::Object> _exports_A_obj = _exports_A_class_0->GetFunction();
+
 
   /* add static class functions and variables */
   SWIGV8_AddStaticFunction(exports_obj, "add", _wrap_add);
 
 
   /* register classes */
-  
+  exports_obj->Set(SWIGV8_SYMBOL_NEW("A"), _exports_A_obj);
+
 
   /* create and register namespace objects */
   
